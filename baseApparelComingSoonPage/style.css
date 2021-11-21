@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(bg-pattern-desktop.svg);
+    background-size: cover;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.leftSide {
+    padding: 0 40px 40px;
+    width: 60%;
+}
+
+.innerContainer {
+    max-width: 500px;
+    margin: auto;
+}
+
+.rightSide {
+    background-image: url(hero-desktop.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 40%;
+}
+
+.logo {
+    margin: 60px 0 120px;
+    width: 200px;
+}
+
+.bgMobile {
+    display: none;
+}
+
+h1 {
+    color: hsl(0, 6%, 24%);
+    font-size: 80px;
+    letter-spacing: 10px;
+    line-height: 1.1;
+    margin-bottom: 0%;
+    transform: translateX(-100%);
+    text-transform: uppercase;
+    animation: comeInLeft 0.5s ease forwards;
+}
+
+@keyframes comeInLeft {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+h1 span {
+    color: hsl(0, 36%, 70%);
+    font-weight: 200;
+}
+
+p {
+    color: hsl(0, 36%, 70%);
+    letter-spacing: 1px;
+    line-height: 26px;
+    margin-top: 40px;
+    margin-bottom: 30px 0;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: comeInRight 0.5s ease forwards;
+}
+
+@keyframes comeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+form {
+    position: relative;
+    transform: translateX(-100%);
+    animation: comeInLeft 0.5s ease forwards;
+}
+
+.errorIcon {
+
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 15px 30px;
+    height: 55px;
+    width: 100%;
+}
+
+input:focus {
+    border-width: 2px;
+    box-shadow: 0px 0px 10px hsla(0, 36%, 70%, 0.5);
+    outline: none;
+}
+
+input::placeholder {
+    color: hsl(0, 36%, 70%);
+}
+
+form.errorIcon input {
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+button {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.2s ease;
+    height: 55px;
+    width: 100px;
+
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+.errorIcon {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 110px;
+}
+
+form.errorIcon .errorIcon {
+    display: block;
+}
+
+small {
+    color: hsl(0, 93%, 68%);
+    display: none;
+    margin-top: 15px;
+    margin-left: 30px;
+
+}
+
+form.errorIcon small {
+    display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+    .logo {
+        margin: 30px 0;
+        width: 100px;
+    }
+    .bgMobile {
+        display: block;
+        margin-left: -40px;
+        margin-right: -40px;
+        width: calc(100% + 80px);
+    }    
+    h1 {
+        font-size: 40px;
+    }
+    .leftSide {
+        width: 100%;
+    }
+    .rightSide {
+        display: none;
+    }
+    
+}
