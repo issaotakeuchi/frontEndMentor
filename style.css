@@ -168,6 +168,7 @@ form.errorIcon small {
         margin-left: -40px;
         margin-right: -40px;
         width: calc(100% + 80px);
+        background-repeat: no-repeat;
     }    
     h1 {
         font-size: 40px;
